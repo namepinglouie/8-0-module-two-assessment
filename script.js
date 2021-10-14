@@ -18,7 +18,6 @@ fetch(url)
         let dataList = data;
 
         for(let d of dataList) {
-            //console.log(d);
             let option = document.createElement("option");
             option.value = d.title;
             option.textContent = d.title;
