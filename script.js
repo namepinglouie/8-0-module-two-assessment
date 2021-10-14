@@ -1,8 +1,12 @@
 let selection = document.querySelector("select");
 let headerSection = document.querySelector("header");
-let displayContent = document.querySelector("#content");
+let displayInfo = document.querySelector("#display-info");
+let form = document.querySelector("form");
+let selectUL = document.querySelector("ul");
+let selectText = document.querySelector("#text-review");
 
 let img = document.createElement("img");
+
 img.src = "./images/ghibli-logo.png";
 headerSection.append(img);
 
@@ -28,19 +32,28 @@ fetch(url)
                     let year = d.release_date;
                     let desc = d.description;
 
-                    displayContent.innerHTML = 
+                    displayInfo.innerHTML = 
                     `
                     <h3>${title}</h3>
                     <p>${year}</p>
                     <p>${desc}</p>
                     `
                 }
-            }
-
-
-
-            
+            }  
         })
+
+        form.addEventListener("submit", (e)=> {
+            e.preventDefault();
+            let formMovieTitle = displayInfo.querySelector("h3").textContent;
+            let createList = document.createElement("li");
+            createList.innerHTML = 
+            `
+            <strong>${formMovieTitle}: </strong>${selectText.value}
+            `
+
+            selectUL.append(createList);
+        })
+
     })
     .catch((error) => console.log(error));
 
