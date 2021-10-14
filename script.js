@@ -50,8 +50,8 @@ fetch(url)
             `
             <strong>${formMovieTitle}: </strong>${selectText.value}
             `
-
             selectUL.append(createList);
+            selectText.value = "";
         })
 
     })
