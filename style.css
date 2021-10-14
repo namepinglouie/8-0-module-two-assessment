@@ -1,0 +1,47 @@
+body {
+    background-color: lavender;
+    font-family: monospace;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "content";
+}
+
+header {
+    width: 75%;
+    background-color: skyblue;
+    display: grid;
+    grid-template-areas: 
+    "image h1";
+    grid-area: header;
+    margin: 0 auto;
+}
+
+img {
+  width: 500px;
+  grid-area: image;
+}
+
+h1 {
+    grid-area: h1;
+    margin-right: 225px;
+}
+
+main {
+    grid-area: content;
+    margin: 25px 275px;
+}
+
+#text-review {
+    width: 206px;
+}
+
+#submit-btn {
+    width: 214px;
+}
+
+form {
+    position: relative;
+    top: 150px;
+    margin: 20px -20px;
+}
