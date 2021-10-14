@@ -17,6 +17,7 @@ fetch(url)
     .then((data) => {
         let dataList = data;
 
+        // This section of code is for drop down movie titles
         for(let d of dataList) {
             let option = document.createElement("option");
             option.value = d.title;
@@ -24,6 +25,7 @@ fetch(url)
             selection.append(option);   
         }
 
+        // This section of code is for displaying information of selected movie title
         selection.addEventListener("change", (e)=> {
             for(let d of dataList) { 
                 if(selection.value === d.title) {
@@ -41,6 +43,7 @@ fetch(url)
             }  
         })
 
+        // This section of code is for submitting a review
         form.addEventListener("submit", (e)=> {
             e.preventDefault();
             let formMovieTitle = displayInfo.querySelector("h3").textContent;
